@@ -1,0 +1,6 @@
+http://code.hcharts.cn/highstock/hhhhvr  一个不错的high charts例子,有时间选择功能,好像还能动态显示多个观察指标
+
+http://www.iteblog.com/archives/960
+Hadoop YARN自带了一系列的web service REST API，我们可以通过这些web service访问集群(cluster)、节点(nodes)、应用(application)以及应用的历史信息
+
+http://zhangxiong0301.iteye.com/blog/2166003 hbase监控

@@ -1,0 +1,55 @@
+$danger_text_color: #f44336;//危险的文本颜色
+$danger_bg_color: $danger_text_color;//危险的背景颜色，多用于删除对话框的title
+
+
+/**
+* 用于删除对话框的title
+**/
+@mixin danger-modal-header {
+  padding: 13px 18px 14px 16px;
+  background: #f44336;
+  color: #fff;
+}
+
+.dangerText{
+  color: $danger_text_color;
+}
+.dangerModal{
+  .ant-modal-header {
+    @include danger-modal-header;
+  }
+}
+.row {
+  //background: #ECECEC;
+  padding:10px;
+
+  margin-left: -8px;
+  margin-right: -8px;
+}
+.row > div {
+  padding: 0 8px;
+}
+.row:before, .row:after{
+  display:none;
+  height:10px;
+}
+//table右侧的操作按钮
+.table-actions {
+
+  .button {
+    padding: 2px 7px;
+    margin: 0 5px;
+
+    //color:darken(lightcoral,20%);
+    //font-weight: bold;
+  }
+
+  //没有边框的图标按钮
+
+}
+.no_border_icon_button{
+  .ant-btn {
+
+    border: 0 solid transparent;
+  }
+}

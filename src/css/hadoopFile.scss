@@ -1,0 +1,75 @@
+@import "base";
+.fileExplorer {
+  .row {
+    cursor: pointer;
+  }
+  .ant-table-row {
+    cursor: pointer;
+  }
+  .fileView {
+
+    .fileStatus {
+      .infoHeader{
+        font-weight:bold;
+        margin-top: 15px;
+      }
+      .cluster-description {
+        margin-left: 20px;
+        margin-top: 15px;
+        .name{
+          font-weight:bold;
+        }
+        .value{
+          margin-bottom: 10px;
+        }
+
+      }
+      background: rgb(250,250,250);
+      float: left;
+      width: 20%;
+      padding:10px;
+      border-radius: 5px;
+      height:100%;
+
+      //margin: 10px;
+    }
+    .fileContent {
+
+      background: rgb(250,250,250);
+      width: 79%;
+      float: right;
+      whiteSpace: 'normal';
+      wordWrap: 'break-word';
+      whiteSpace: 'pre-wrap';
+      whiteSpace: '-moz-pre-wrap';
+      padding:10px;
+      border-radius: 5px;
+    }
+  }
+
+}
+
+.canClick {
+  cursor: pointer;
+  :hover{
+    text-decoration:underline;
+  }
+  .root {
+    margin: 3px;
+  }
+  //margin: 2px;
+}
+
+.navigate-header {
+  border-radius: 5px;
+  height: 38px;
+  margin-bottom: 10px;
+  //background: #f6a69a;
+  background: lightcoral;
+  padding: 10px;
+  color: white;
+  fontSize: '12px';
+  .fileName {
+    font-weight: bold
+  }
+}

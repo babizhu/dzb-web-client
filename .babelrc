@@ -1,0 +1,10 @@
+{
+ "plugins": ["transform-es2015-spread","antd"],
+  "presets": ["es2015","react","stage-0" ],
+  "compact": false,//避免出现What does "The code generator has deoptimised the styling of [some file] as it exceeds the max of "100KB""
+  "env": {
+    "development": {
+
+    }
+  }
+}
