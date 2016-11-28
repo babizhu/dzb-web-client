@@ -23,8 +23,8 @@ class AppContainer extends Component {
     }
 
     btnClick(key){
-        console.log(this);
-        this.context.router.replace('/login');
+        const currentPath = this.props.currentPath;
+        this.context.router.replace('/login?redirectPath='+ currentPath);
         notification.close(key);
     }
     componentDidUpdate(prevProps, prevState) {
@@ -75,8 +75,10 @@ AppContainer.contextTypes = contextTypes;
 
 function mapStateToProps(state, ownProps) {
 
+
     return {
-        app: state.app
+        app: state.app,
+        currentPath: ownProps.location.pathname//当前所使用组件的url,
     }
 }
 

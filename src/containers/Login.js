@@ -23,13 +23,13 @@ class Login extends React.Component {
 
     componentWillReceiveProps(nextProps) {
 
-        let exdate=new Date();
+        let exdate = new Date();
         exdate.setDate(exdate.getDate() + 1);
-        document.cookie="isLogin=" + nextProps.profile.isLogin;// + ";expires="+exdate.toGMTString();
+        document.cookie = "isLogin=" + nextProps.profile.isLogin;// + ";expires="+exdate.toGMTString();
         if (nextProps.profile.isLogin === true) {
             // console.log(this);
-
-            this.context.router.replace('/');
+            const redirectPath = this.props.redirectPath;
+            this.context.router.replace(redirectPath ? redirectPath : '/');
             // this.props.history.replace('/app');
         }
     }
@@ -55,7 +55,7 @@ class Login extends React.Component {
             encrypt.setPublicKey(PUBLIC_KEY);
             const password = encrypt.encrypt(values.password);
 
-            console.log('rsa password : ', password);
+            // console.log('rsa password : ', password);
             this.props.login(values.userName, password, values.rememberMe);
         });
     }
@@ -86,8 +86,8 @@ class Login extends React.Component {
         // });
         const title = <span>登录信息保存1天。 <br /><br />公共网络请勿使用此选项</span>;
         const formItemLayout = {
-            labelCol: { span: 6 },
-            wrapperCol: { span: 14 }
+            labelCol: {span: 6},
+            wrapperCol: {span: 14}
         };
         return (
             <span className="login">
@@ -96,12 +96,18 @@ class Login extends React.Component {
                     <Form horizontal onSubmit={this.handleSubmit.bind(this)} className="login-form">
 
                         <FormItem {...formItemLayout} label='用户名：'>
-                            {getFieldDecorator('userName', {initialValue:'admin',rules: [{required: true, message: 'Please input your username!'}]})(
+                            {getFieldDecorator('userName', {
+                                initialValue: 'admin',
+                                rules: [{required: true, message: 'Please input your username!'}]
+                            })(
                                 <Input addonBefore={<Icon type="user" />} placeholder="请输入登录用户名"/>
                             )}
                         </FormItem>
                         <FormItem {...formItemLayout} label='密码：'>
-                            {getFieldDecorator('password', {initialValue:'123456', rules: [{required: true, message: 'Please input your Password!'}]})(
+                            {getFieldDecorator('password', {
+                                initialValue: '123456',
+                                rules: [{required: true, message: 'Please input your Password!'}]
+                            })(
                                 <Input addonBefore={<Icon type="lock" />} type="password" placeholder="请输入登录密码"/>
                             )}
                         </FormItem>
@@ -137,9 +143,10 @@ Login.contextTypes = contextTypes;
 Login = Form.create()(Login);
 
 // export default connect(mapStateToProps, mapDispatchToProps)(Login)
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
     return {
-        profile: state.profile
+        profile: state.profile,
+        redirectPath: ownProps.location.query.redirectPath//登录成功后跳转的页面
 
     }
 }

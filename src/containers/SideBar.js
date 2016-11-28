@@ -52,7 +52,7 @@ class SideBar extends Component {
             } else {
                 widthValue = '240px';
             }
-            displayMode = 'table-cell';
+            // displayMode = 'table-cell';
         } else {
             widthValue = '100%';
             if (sideBar.showMode == MINI) {//小屏幕下的mini模式，隐藏sideBar

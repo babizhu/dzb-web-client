@@ -4,7 +4,7 @@
   "compact": false,//避免出现What does "The code generator has deoptimised the styling of [some file] as it exceeds the max of "100KB""
   "env": {
     "development": {
-
+      "presets": ["react-hmre"]
     }
   }
 }

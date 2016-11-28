@@ -26,7 +26,6 @@ class App extends Component {
     componentDidMount() {
         window.addEventListener('resize', this._resize_mixin_callback.bind(this));
         this._resize_mixin_callback();
-
     }
 
     componentWillUnmount() {
@@ -52,25 +51,6 @@ class App extends Component {
 
         }
     }
-
-    componentDidUpdate(prevProps, prevState) {
-        // const { errMsg } = this.props.app;
-        //
-        // if (errMsg) {
-        //     notification.error({
-        //         message: "出故障啦",
-        //         description: <span><span
-        //             style={{fontWeight:'bold'}}>url:</span> {errMsg.url}<br /><br />{errMsg.msg}</span>,
-        //         duration: 10
-        //     });
-        //
-        //     const {resetErrMsg} = this.props.appActions;
-        //     resetErrMsg();
-        //
-        // }
-
-    }
-
     render() {
         const { children,componentUrl,screen,sideBar,app,clusterList } = this.props;
         let sideBarHeight = 'auto';
@@ -91,7 +71,7 @@ class App extends Component {
 
 
                 <Header />
-                <div style={{float:'left',display:'table', tableLayout: 'fixed',minHeight:sideBarHeight}}>
+                <div style={{float:'left',minHeight:sideBarHeight,background:'#263238'}}>
                     <SideBar componentUrl={componentUrl}/>
                 </div>
 
