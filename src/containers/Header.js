@@ -2,12 +2,12 @@
  * Created by liu_k on 2015/11/18.
  * 整个应用的header条
  */
-import React, { Component } from 'react';
+import React, { Component,PropTypes } from 'react';
 import ReactDom from "react-dom"
 import { Steps,Menu, Dropdown, Button, Icon } from 'antd';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-
+import {BASE_URI} from '../conf/config'
 
 import '../css/header.scss'
 
@@ -33,9 +33,23 @@ class Header extends Component {
             }
         });
     }
+    componentWillReceiveProps(nextProps) {
 
+
+        if (nextProps.profile.isLogin === false) {
+
+            window.location='/login';
+            // this.props.history.replace('/app');
+        }
+    }
+    logout(){
+        this.props.profileActions.logout();
+        
+        // <Icon type="minus-circle"/> <span onClick={this.logout.bind(this)}>退出系统</span>
+    }
     render() {
 
+        
         const menu = <div style={{width:'100%'}}><Menu >
 
             <Menu.Item>
@@ -59,7 +73,7 @@ class Header extends Component {
             </Menu.Item>
             <Menu.Divider className="menu-divider"/>
             <Menu.Item>
-                <Icon type="minus-circle"/><span> <a href='http://www.sina.com'>退出系统</a></span>
+                <Icon type="minus-circle"/> <span onClick={this.logout.bind(this)}>退出系统</span>
             </Menu.Item>
 
         </Menu></div>;
@@ -132,6 +146,10 @@ class Header extends Component {
     }
 }
 
+const contextTypes = {
+    router: PropTypes.object.isRequired,
+    store: PropTypes.object.isRequired
+};
 
 Header.propTypes = {
 

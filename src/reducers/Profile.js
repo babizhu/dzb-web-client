@@ -5,7 +5,7 @@
 //noinspection JSUnresolvedVariable
 import { combineReducers } from 'redux'
 
-import {EDIT_NAME,LOGIN,LOGIN_SUCCESS,LOGIN_ERROR,LOGOUT,COUNT_SUCCESS} from '../actions/Profile'
+import {EDIT_NAME,LOGIN,LOGIN_SUCCESS,LOGIN_ERROR,LOGOUT_SUCCESS} from '../actions/Profile'
 
 const initState = {
     name: '刘呦呦',
@@ -32,12 +32,12 @@ function profile(state = initState, action) {
                 isLogin: action.payload.ok
             };
             break;
-        case COUNT_SUCCESS:
+        case LOGOUT_SUCCESS:
 
             // return Object.assign({}, state, {isLogin: true});
             return {
                 ...state,
-                count: (state.count?state.count:1)+1
+               isLogin:false
             };
             break;
         case LOGIN_ERROR:

@@ -34,13 +34,6 @@ class Login extends React.Component {
         }
     }
 
-    // handleCount() {
-    //     // this.context.router.replace('/');
-    //     // console.log("handlerCount")
-    //     // console.log(this.props);
-    //
-    //     this.props.count();
-    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -63,27 +56,7 @@ class Login extends React.Component {
 
     render() {
         const {getFieldDecorator} = this.props.form;
-        // const formItemLayout = {
-        //     labelCol: {span: 6},
-        //     wrapperCol: {span: 14}
-        // };
-        // const user = getFieldProps('user', {
-        //     initialValue: 'admin',
-        //     rules: [{
-        //         required: true,
-        //         whitespace: true,
-        //         message: '请输入用户名'
-        //     }]
-        // });
-        //
-        // const password = getFieldProps('password', {
-        //     initialValue: '123456',
-        //     rules: [{
-        //         required: true,
-        //         whitespace: true,
-        //         message: '请输入密码'
-        //     }]
-        // });
+  
         const title = <span>登录信息保存1天。 <br /><br />公共网络请勿使用此选项</span>;
         const formItemLayout = {
             labelCol: {span: 6},

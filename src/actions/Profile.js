@@ -66,9 +66,9 @@ export const LOGOUT_ERROR = 'LOGOUT';
  */
 export function logout() {
     return {
-        type: LOGIN,
+        type: LOGOUT,
         payload: {
-            promise: api.get('user/login', {
+            promise: api.get('user/logout', {
                 params: {
                     
                 }
