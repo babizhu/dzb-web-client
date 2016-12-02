@@ -8,7 +8,7 @@ import { combineReducers } from 'redux'
 import {EDIT_NAME,LOGIN,LOGIN_SUCCESS,LOGIN_ERROR,LOGOUT_SUCCESS} from '../actions/Profile'
 
 const initState = {
-    name: '刘呦呦',
+    name: '',
     iconUrl:'/img/lyy.jpg',
     address:'重庆市 南岸区',
     isLogin:false,
@@ -23,12 +23,13 @@ function profile(state = initState, action) {
         case LOGIN:
             return action.data;
         case LOGIN_SUCCESS:
-            console.log( 'LOGIN_SUCCESS!!!!!!!!!!!!!!1' + JSON.stringify(action) );
+            // console.log( 'LOGIN_SUCCESS!!!!!!!!!!!!!!1' + JSON.stringify(action) );
             // return Object.assign({}, state, {isLogin: true});
             return {
                 ...state,
                 pending: false,
                 error: null,
+                name:action.payload.name,
                 isLogin: action.payload.ok
             };
             break;

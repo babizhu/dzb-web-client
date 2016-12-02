@@ -23,9 +23,9 @@ function validateLogin(next, replace, callback) {
 
     const isLoggedIn = getCookie("isLogin");
     if (!isLoggedIn && next.location.pathname != '/login') {
-        replace('/login')
+        replace('/login');
     }
-    callback()
+    callback();
 }
 
 export default (

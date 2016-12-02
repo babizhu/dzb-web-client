@@ -42,7 +42,7 @@ class AppContainer extends Component {
                 message: "出故障啦",
                 description: <span><span
                     style={{fontWeight:'bold'}}>url:</span> {errMsg.url}<br /><br />{errMsg.msg}</span>,
-                duration: 1000,
+                duration: 6,
                 key,
                 btn:errMsg.errId==101?btn:null
             });

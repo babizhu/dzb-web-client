@@ -108,7 +108,7 @@ class Header extends Component {
                             <span className="visible-xs-inline-block">Git updates</span>
 
                         </li>
-                        <li>Label</li>
+                        <li>{new Date().toLocaleDateString()}</li>
                     </ul>
                 </div>
 

@@ -6,6 +6,8 @@ import React, {Component, PropTypes} from 'react';
 import {Menu, Icon, Table, Dropdown, Button, Modal,Tooltip,message} from 'antd';
 const DropdownButton = Dropdown.Button;
 import SearchInput from '../Utils/SearchInput'
+import { Input } from 'antd';
+const Search = Input.Search;
 import EnterpriseModal from './EnterpriseModal'
 import DelEnterpriseModal from './DelEnterpriseModal'
 
@@ -211,14 +213,14 @@ class EnterpriseList extends Component {
                 }
             }];
 
-
+        // <SearchInput placeholder="search by name or description" onSearch={keyword => this.search(keyword)} style={{ width: '25%' }}/>
+        // 自己做的搜索框，没问题电话，用系统提供的代替
         return (
             <div className='enterprise-list'>
                 <div style={{margin:'10px 0px',height:'auto',minWidth:'560px'}}>
 
-                    <SearchInput placeholder="search by name or description"
-                                 onSearch={keyword => this.search(keyword)} style={{ width: '25%' }}/>
 
+                    <Search placeholder="search by name or description" onSearch={keyword => this.search(keyword)} style={{ width: '25%' }}/>
                     <div style={{float:'right'}}>
                         <Button type="primary" icon="reload" onClick={this.refresh.bind(this)}
                                 loading={enterpriseList.pending}
