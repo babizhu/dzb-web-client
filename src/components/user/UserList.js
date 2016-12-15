@@ -11,7 +11,7 @@ import DelUserModal from './DelUserModal'
 
 
 import {ignoreClick} from '../../utils/index';
-import {OPERATION_ADD_ITEM, OPERATION_DEL_ITEM, OPERATION_EDIT_ITEM} from '../../const/Const';
+import {OPERATION_ADD_ITEM, OPERATION_DEL_ITEM, OPERATION_EDIT_ITEM,OPERATION_CHANGE_PASSWORD} from '../../const/Const';
 
 
 class UserList extends Component {
@@ -58,12 +58,18 @@ class UserList extends Component {
      * @param operationId   当前操作的类型：
      *                      1       增加和修改记录
      *                      2       删除记录
+     *                      3       重置密码
      *
      */
     onOk(record, newItem, operationId) {
-        const {openUserModal,doUserOperation} = this.props;
+        const {openUserModal,doUserOperation,resetPassword} = this.props;
         if (newItem) {//如果是从弹出对话框通过点击OK按钮回调而来的情况
-            doUserOperation( operationId, newItem);
+            if( operationId === OPERATION_CHANGE_PASSWORD ){
+                console.log(newItem.newPassword);
+                resetPassword(newItem.name,newItem.newPassword);
+            }else{
+                doUserOperation( operationId, newItem);
+            }
         } else {
             if (record) {
                 this.currentItem = record;
@@ -71,7 +77,17 @@ class UserList extends Component {
             openUserModal(operationId);
         }
     }
-
+    // onChangePassword(record,userItem) {
+    //     const {openUserModal,doUserOperation} = this.props;
+    //     if (userItem) {//从弹出对话框通过点击OK按钮回调而来的情况
+    //         doUserOperation( OPERATION_CHANGE_PASSWORD, userItem);
+    //     } else {
+    //         if (record) {
+    //             this.currentItem = record;
+    //         }
+    //         openUserModal(OPERATION_CHANGE_PASSWORD);
+    //     }
+    // }
     onDel(record,delItem) {
         const {openUserModal,doUserOperation} = this.props;
         if (delItem) {//如果是从弹出对话框通过点击OK按钮回调而来的情况
@@ -184,6 +200,7 @@ class UserList extends Component {
                                     <Icon type="delete"/>
                                 </Button>
                             </Tooltip>
+                            
                         </span>
                         </div>
                     );

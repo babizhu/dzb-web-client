@@ -77,3 +77,23 @@ export function doUserOperation(op, item) {
         }
     }
 }
+
+export function resetPassword(userName, newPassword){
+    return {
+        type: USER_OPERATION,
+        meta: {
+            op:3,
+  
+            //path,
+        },
+        payload: {
+            promise: api.get('user/resetPassword', {
+                params: {
+
+                    userName,
+                    newPassword
+                }
+            })
+        }
+    }
+}

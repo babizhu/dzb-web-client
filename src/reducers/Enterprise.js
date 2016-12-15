@@ -56,7 +56,7 @@ function enterpriseList(state = initEnterpriseListState, action) {
             };
         case ENTERPRISE_OPERATION_SUCCESS://根据增删改操作的返回结果更新客户端内存的业务数据
 
-            //console.log('ENTERPRISE_LIST_OPERATION_SUCCESS 之后' + JSON.stringify(action.payload));
+            console.log('ENTERPRISE_LIST_OPERATION_SUCCESS 之后' + JSON.stringify(action.payload));
             return {
                 ...state,
                 data: updateEnterpriseList(state.data, action.payload, action.meta.op === OPERATION_DEL_ITEM)

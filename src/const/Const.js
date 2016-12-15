@@ -17,3 +17,4 @@ export const NET_TIMEOUT_MS = 800000;
 export const OPERATION_ADD_ITEM = 1;
 export const OPERATION_EDIT_ITEM = 1;
 export const OPERATION_DEL_ITEM = 2;
+export const OPERATION_CHANGE_PASSWORD = 3;

@@ -8,6 +8,9 @@ const errors = {
     1: {
         text:'输入参数错误。'
     },
+    2: {
+        text:'服务器内部错误：%s，请联系管理员解决。'
+    },
     100: {
         text:'登录失败，用户名或密码错误。'
     },
@@ -44,6 +47,10 @@ const errors = {
         text: '后端出现未知逻辑错误，请联系管理员解决。'
     },
     501: {
+        //text: 'hadoop文件%s没找到,this is a test for%s'
+        text: '您无权访问 %s 文件（夹）'
+    },
+    601: {
         //text: 'hadoop文件%s没找到,this is a test for%s'
         text: '您无权访问 %s 文件（夹）'
     }
