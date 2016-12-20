@@ -82,7 +82,7 @@ export function resetPassword(userName, newPassword){
     return {
         type: USER_OPERATION,
         meta: {
-            op:3,
+            // op:3,
   
             //path,
         },

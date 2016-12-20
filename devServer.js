@@ -17,6 +17,7 @@ var webpack = require('webpack');
  * 同样记得在.babelrc中，需要删除如下字样
  * "presets": ["react-hmre"]
  * 还要把index.html中引用js目录从static修改为dist，也可以自行根据情况设定
+ * 修改config.js里面的host变量为生产环境的变量
  */
 var config = require('./webpack.config.dev');
 

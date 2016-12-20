@@ -56,7 +56,7 @@ function userList(state = initUserListState, action) {
             //console.log('USER_LIST_OPERATION_SUCCESS 之后' + JSON.stringify(action.payload));
             return {
                 ...state,
-                data: updateUserList(state.data, action.payload, action.meta.op === OPERATION_DEL_ITEM)
+                data: updateUserList(state.data, action.payload, action.meta.op )
             };
         default:
             return state;
@@ -69,7 +69,12 @@ function userList(state = initUserListState, action) {
  * @param changeData    变化的数据
  * @param isDelete      是否删除操作导致的变化
  */
-function updateUserList(initData, changeData, isDelete) {
+function updateUserList(initData, changeData, op) {
+
+    if( !op ){
+        return initData;
+    }
+    const isDelete  = op === OPERATION_DEL_ITEM;
     //console.log('是否删除？ ' + isDelete);
     if (!changeData) {
         return;

@@ -70,7 +70,7 @@ class Login extends React.Component {
 
                         <FormItem {...formItemLayout} label='用户名：'>
                             {getFieldDecorator('userName', {
-                                initialValue: 'admin',
+                                initialValue: '',
                                 rules: [{required: true, message: 'Please input your username!'}]
                             })(
                                 <Input addonBefore={<Icon type="user" />} placeholder="请输入登录用户名"/>
@@ -78,7 +78,7 @@ class Login extends React.Component {
                         </FormItem>
                         <FormItem {...formItemLayout} label='密码：'>
                             {getFieldDecorator('password', {
-                                initialValue: '123456',
+                                initialValue: '',
                                 rules: [{required: true, message: 'Please input your Password!'}]
                             })(
                                 <Input addonBefore={<Icon type="lock" />} type="password" placeholder="请输入登录密码"/>

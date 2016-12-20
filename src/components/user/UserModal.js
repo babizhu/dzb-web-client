@@ -8,7 +8,7 @@ import {Button, Form, Input, Modal, Icon, Checkbox, Tabs, Row, Col} from 'antd';
 const CheckboxGroup = Checkbox.Group;
 const createForm = Form.create;
 const FormItem = Form.Item;
-import {OPERATION_ADD_ITEM, OPERATION_EDIT_ITEM,OPERATION_CHANGE_PASSWORD} from '../../const/Const';
+import {OPERATION_ADD_ITEM, OPERATION_EDIT_ITEM, OPERATION_CHANGE_PASSWORD} from '../../const/Const';
 const TabPane = Tabs.TabPane
 class UserModal extends Component {
 
@@ -143,7 +143,7 @@ class UserModal extends Component {
                                         }
                                     ]
                                 })(
-                                <Input placeholder="请输入新密码"/>
+                                <Input type='password' placeholder="请输入新密码"/>
                             )}
                         </FormItem>
                         <FormItem {...formItemLayout} label='再次输入密码：'>
@@ -156,7 +156,7 @@ class UserModal extends Component {
 
                                 ]
                             })(
-                                <Input placeholder="请再次输入新密码"/>
+                                <Input type='password' placeholder="请再次输入新密码"/>
                             )}
                         </FormItem>
 
