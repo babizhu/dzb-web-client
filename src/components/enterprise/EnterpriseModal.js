@@ -112,6 +112,11 @@ class EnterpriseModal extends Component {
                             <Input placeholder="请输入企业BAIDU地图导航地址"/>
                         )}
                     </FormItem>
+                    <FormItem {...formItemLayout} label='导航地址2：'>
+                        {getFieldDecorator('mapAddress2', {initialValue:item.mapAddress2,rules: [{required: false, message: '导航地址2不能为空!'}]})(
+                            <Input placeholder="请输入企业高德地图导航地址"/>
+                        )}
+                    </FormItem>
 
                     <FormItem {...formItemLayout} label='地图坐标X：'>
                         {getFieldDecorator('mapX', {initialValue:item.mapX,rules: [{required: true, message: '在地图上的坐标X不能为空!'}]})(
@@ -121,6 +126,11 @@ class EnterpriseModal extends Component {
                     <FormItem {...formItemLayout} label='地图坐标Y：'>
                         {getFieldDecorator('mapY', {initialValue:item.mapY,rules: [{required: true, message: '在地图上的坐标Y不能为空!'}]})(
                             <Input placeholder="请输入企业在地图上的坐标Y"/>
+                        )}
+                    </FormItem>
+                    <FormItem {...formItemLayout} label='排  序：'>
+                        {getFieldDecorator('orderId', {initialValue:item.orderId,rules: [{required: false}]})(
+                            <Input placeholder="请输入排序数字"/>
                         )}
                     </FormItem>
                     <FormItem {...formItemLayout} label='地  址：'>

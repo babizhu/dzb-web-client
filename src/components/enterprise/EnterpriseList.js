@@ -183,9 +183,9 @@ class EnterpriseList extends Component {
                 width: 220,
                 key: 'address'
             }, {
-                title: '介绍',
-                dataIndex: 'description',
-                key: 'description'
+                title: '排序',
+                dataIndex: 'orderId',
+                key: 'orderId'
             }, {
                 title: '操作',
                 key: 'operation',
