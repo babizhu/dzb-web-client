@@ -1,0 +1,9 @@
+
+ 打包请调用
+ npm run build:webpack
+
+ 1.在.babelrc中，需要删除如下字样
+ "presets": ["react-hmre"]
+
+ 2.修改config.js里面的host变量为生产环境的变量
+
