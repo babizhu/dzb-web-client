@@ -13,7 +13,7 @@ module.exports = {
     },
     plugins: [
 
-        new webpack.optimize.OccurenceOrderPlugin(),
+        // new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
@@ -26,16 +26,16 @@ module.exports = {
             minimize: true,
             sourceMap: false
         }),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ],
     module: {
         loaders: [{
             test: /\.jsx?/,
-            loaders: ['babel'],//数组就用loaders，否则用loder
+            loaders: ['babel-loader'],//数组就用loaders，否则用loder
             include: path.join(__dirname, 'src')
         },
             {test: /\.css$/, loader: 'style-loader!css-loader'},
-            {test: /\.scss$/, loaders: ['style', 'css', 'sass']}
+            {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']}
         ]
     }
 };

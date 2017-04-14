@@ -15,18 +15,18 @@ module.exports = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ],
     module: {
         loaders: [{
             test: /\.jsx?/,
-            compact: false,
-            loader: 'babel',
+            // compact: false,
+            loaders: ['babel-loader'],
 
             include: path.join(__dirname, 'src')
         },
             {test: /\.css$/, loader: 'style-loader!css-loader'},
-            {test: /\.scss$/, loaders: ['style', 'css', 'sass']}
+            {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']}
         ]
     }
 };
